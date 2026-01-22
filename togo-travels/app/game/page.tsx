@@ -1,5 +1,6 @@
 import BaseLayoutPage from "../components/baseLayoutPage";
 import Card from "../components/card";
+import Reveal from "../components/reveal";
 import { CardProps } from "../enums/cardProprs";
 
 
@@ -19,7 +20,10 @@ export default function Game() {
                     <div className="flex flex-col gap-2 sm:grid sm:grid-cols-3 lg:grid lg:grid-cols-4">
                         {
                             cardProps.map((item, key) => (
-                                <Card key={key} image={item.image} title={item.title} description={item.description} />
+                                <Reveal key={key}>
+                                    <Card key={key} image={item.image} title={item.title} description={item.description} />
+                                </Reveal>
+                                
                             ))
                         }
                     </div>
